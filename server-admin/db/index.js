@@ -60,7 +60,7 @@ function insert(model, tableName) {
             Object.keys(model).forEach(key => {
                 if (model.hasOwnProperty(key)) {
                     keys.push(`\`${key}\``)
-                    values.push(`'${model[key]}'`)
+                    values.push(`"${model[key]}"`)
                 }
             })
             if (keys.length > 0 && values.length > 0) {

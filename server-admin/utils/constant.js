@@ -3,7 +3,7 @@ const { env } = require("./env")
 const UPLOAD_PATH = 'E:/webDevelope/nginx/nginx-1.16.1/lxy/read/upload'
 
 // const UPLOAD_URL = env === 'dev' ? 'http://lxy.amusement.com' : '线上地址'
-const UPLOAD_URL = 'http://lxy.amusement.com/upload'
+const UPLOAD_URL = 'http://127.0.0.1:9000/upload'
 
 const OLD_UPLOAD_URL = 'https://www.youbaobao.xyz/book/res/img'
 

@@ -4,8 +4,8 @@ import store from '@/store'
 import { getToken } from '@/utils/auth'
 
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API, 
-  timeout: 30000 
+  baseURL: process.env.VUE_APP_BASE_API,
+  timeout: 50000
 })
 
 service.interceptors.request.use(
@@ -16,7 +16,7 @@ service.interceptors.request.use(
     return config
   },
   error => {
-    console.log(error) 
+    console.log(error)
     return Promise.reject(error)
   }
 )
@@ -49,7 +49,7 @@ service.interceptors.response.use(
     }
   },
   error => {
-    console.log({error}) 
+    console.log({ error })
     const { msg } = error.response.data
     Message({
       message: msg || '请求失败',

@@ -39,7 +39,7 @@ class Book {
         this.contents = [] //目录
         this.cover = '' // 封面图片url
         this.coverPath = '' // 封面图片路径
-        this.category = -1 // 分类ID
+        this.category = '' // 分类ID
         this.categoryText = '' // 分类名称
         this.language = '' // 语种
         this.unzipUrl = unzipUrl // 解压后文件夹链接

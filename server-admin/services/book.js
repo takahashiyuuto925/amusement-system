@@ -99,6 +99,7 @@ function getBook(fileName) {
         if (book) {
             book.cover = Book.genCoverUrl(book)
             book.contentsTree = Book.genContentsTree(contents)
+            console.log(book,'65')
             resolve(book)
         } else {
             reject(new Error('电子书不存在'))
