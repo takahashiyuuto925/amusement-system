@@ -1,5 +1,5 @@
 const { env } = require("./env")
-const UPLOAD_PATH = env === 'dev' ? 'http://127.0.0.1:9000/upload'  : 'https://read.lxyamusement.cn:18082/upload'
+const UPLOAD_PATH = env === 'dev' ? 'E:/webDevelope/nginx/nginx-1.16.1/lxy/read/upload'  : '/root/nginx/read/upload'
 
 const UPLOAD_URL = env === 'dev' ? 'http://127.0.0.1:9000/upload' : 'https://read.lxyamusement.cn:18082/upload'
 

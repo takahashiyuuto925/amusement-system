@@ -1,5 +1,3 @@
 node_modules/
 https/
-/db/*
-!/db/index.js
-!/db/book.sql
+db/config.js

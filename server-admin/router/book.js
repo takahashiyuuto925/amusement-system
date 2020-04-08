@@ -15,7 +15,7 @@ router.post(
     function (req, res, next) {
         if (!req.file || req.file.length === 0) {
             new Result('上传失败').fail(res)
-        }else {
+        } else {
             const book = new Book(req.file)
             book.parse().then(book => {
                 // console.log(book,'book')

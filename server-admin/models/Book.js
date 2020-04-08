@@ -211,16 +211,6 @@ class Book {
                                 
                             })
                             const chapterTree = Book.genContentsTree(chapters)
-                            // const chapterTree = []
-                            // chapters.forEach(item => {
-                            //     item.children = []
-                            //     if (item.pid === '') {
-                            //         chapterTree.push(item)
-                            //     } else {
-                            //         const parent = chapters.find(_ => _.navId === item.pid)
-                            //         parent.children.push(item)
-                            //     }
-                            // })
                             resolve({chapters, chapterTree})
                         } else {
                             reject( new Error('目录解析失败，目录数为0'))
@@ -269,7 +259,6 @@ class Book {
         }
         if (Book.pathExists(this.unzipPath)) {
             this.delDir(Book.genPath(this.unzipPath))
-            // fs.rmdirSync(Book.genPath(this.unzipPath), {recursive: true})  
         }
     }
 
