@@ -7,6 +7,10 @@ module.exports = jwt({
 }).unless({
     path: [
         '/',
-        '/user/login'
+        '/user/login',
+        '/bookmall/home',
+        '/bookmall/list',
+        '/bookmall/detail',
+        '/bookmall/shelf',
     ] // jwt认证白名单
 })

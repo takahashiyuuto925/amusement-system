@@ -49,7 +49,6 @@ function insertBook(book) {
         try {
             if (book instanceof Book) {
                 const result = await exists(book)
-                console.log(result,'060')
                 if (result) {
                     await removeBook(book)
                     reject(new Error('电子书已存在'))
@@ -99,7 +98,6 @@ function getBook(fileName) {
         if (book) {
             book.cover = Book.genCoverUrl(book)
             book.contentsTree = Book.genContentsTree(contents)
-            console.log(book,'65')
             resolve(book)
         } else {
             reject(new Error('电子书不存在'))

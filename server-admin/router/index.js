@@ -2,6 +2,7 @@ const express = require('express')
 const boom = require('boom')
 const userRouter = require('./user')
 const bookRouter = require('./book')
+const bookmallRouter = require('./bookmall')
 const jwtAuth = require('./jwt')
 const Result = require('../models/Result')
 
@@ -16,6 +17,7 @@ router.use(jwtAuth)
 
 router.use('/user', userRouter)
 router.use('/book', bookRouter)
+router.use('/bookmall', bookmallRouter)
 
 router.get('/transaction/list', function (req, res) {
   res.send({

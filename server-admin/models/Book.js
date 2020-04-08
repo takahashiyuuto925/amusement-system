@@ -1,4 +1,4 @@
-const {MIME_TYPE_EPUB, UPLOAD_URL, UPLOAD_PATH, OLD_UPLOAD_URL} = require('../utils/constant')
+const {MIME_TYPE_EPUB, UPLOAD_URL, UPLOAD_PATH} = require('../utils/constant')
 const fs = require('fs')
 const Epub = require('../utils/epub')
 const path = require('path')
@@ -240,7 +240,7 @@ class Book {
             title: this.title,
             author: this.author,
             publisher: this.publisher,
-            bookId: this.bookId,
+            bookId: this.bookId || this.fileName,
             language: this.language,
             rootFile: this.rootFile,
             originalName: this.originalName,
@@ -304,22 +304,22 @@ class Book {
 
     static genCoverUrl(book){
         const {cover} = book
-        if (+book.updateType === 0) {
-            if (cover) {
-                if (cover.startsWith('/')) {
-                    return `${OLD_UPLOAD_URL}${cover}`
-                } else {
-                    return `${OLD_UPLOAD_URL}/${cover}`
-                }
-            } else {
-                return null
-            }
-        } 
-        else {
+        // if (+book.updateType === 0) {
+        //     if (cover) {
+        //         if (cover.startsWith('/')) {
+        //             return `${OLD_UPLOAD_URL}${cover}`
+        //         } else {
+        //             return `${OLD_UPLOAD_URL}/${cover}`
+        //         }
+        //     } else {
+        //         return null
+        //     }
+        // } 
+        // else {
             if (cover) {
                 return cover
             }
-        }
+        // }
     }
 
     static genContentsTree(contents){
