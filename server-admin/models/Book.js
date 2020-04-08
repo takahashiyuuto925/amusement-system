@@ -304,22 +304,9 @@ class Book {
 
     static genCoverUrl(book){
         const {cover} = book
-        // if (+book.updateType === 0) {
-        //     if (cover) {
-        //         if (cover.startsWith('/')) {
-        //             return `${OLD_UPLOAD_URL}${cover}`
-        //         } else {
-        //             return `${OLD_UPLOAD_URL}/${cover}`
-        //         }
-        //     } else {
-        //         return null
-        //     }
-        // } 
-        // else {
-            if (cover) {
-                return cover
-            }
-        // }
+        if (cover) {
+            return cover
+        }
     }
 
     static genContentsTree(contents){

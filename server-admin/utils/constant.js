@@ -1,12 +1,9 @@
 const { env } = require("./env")
-const UPLOAD_PATH = env === 'dev' ? 'E:/webDevelope/nginx/nginx-1.16.1/lxy/read/upload'  : 'http://39.100.30.211/upload'
-// const UPLOAD_PATH = 'E:/webDevelope/nginx/nginx-1.16.1/lxy/read/upload'
+const UPLOAD_PATH = env === 'dev' ? 'http://127.0.0.1:9000/upload'  : 'https://read.lxyamusement.cn:18082/upload'
 
-const UPLOAD_URL = env === 'dev' ? 'http://127.0.0.1:9000/upload' : 'http://39.100.30.211/upload'
-// const UPLOAD_URL = 'http://127.0.0.1:9000/upload'
+const UPLOAD_URL = env === 'dev' ? 'http://127.0.0.1:9000/upload' : 'https://read.lxyamusement.cn:18082/upload'
 
-// const OLD_UPLOAD_URL = 'https://www.youbaobao.xyz/book/res/img'
-const BANNER_URL = env === 'dev' ? 'http://127.0.0.1:9000' : 'http://39.100.30.211'
+const BANNER_URL = env === 'dev' ? 'http://127.0.0.1:9000' : 'https://read.lxyamusement.cn:18082'
 
 const Category = [
   '玄幻',
@@ -29,5 +26,4 @@ module.exports = {
     UPLOAD_URL,
     Category,
     BANNER_URL
-    // OLD_UPLOAD_URL
   }
