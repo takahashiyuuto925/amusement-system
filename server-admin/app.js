@@ -23,7 +23,7 @@ const credentials = {
     cert : pem 
 }
 const httpsServer = https.createServer(credentials, app) //启动https服务
-httpsServer.listen(18082,function () {
+httpsServer.listen(18082, function () {
     console.log('https启动成功 https://%s:%s', 18082)
 })
 

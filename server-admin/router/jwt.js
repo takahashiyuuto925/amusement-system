@@ -12,5 +12,22 @@ module.exports = jwt({
         '/bookmall/list',
         '/bookmall/detail',
         '/bookmall/shelf',
+        '/wxbook/home',
+        '/wxbook/home/recommend',
+        '/wxbook/home/freeRead',
+        '/wxbook/home/hotBook',
+        '/wxbook/search',
+        '/wxbook/hot-search',
+        '/wxbook/search-list',
+        '/wxbook/detail',
+        '/wxbook/rank/save',
+        '/wxbook/contents',
+        '/wxbook/shelf/get',
+        '/wxbook/shelf/save',
+        '/wxbook/shelf/remove',
+        '/wxbook/category/list',
+        '/wxuser/openId/get',
+        '/wxuser/register',
+        '/wxuser/day'
     ] // jwt认证白名单
 })

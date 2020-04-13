@@ -207,7 +207,7 @@ export default {
         fileName, coverPath, filePath, unzipPath, contentsTree, category } = data
 
       if (cover === '') {
-        this.postForm.cover = 'http://127.0.0.1:9000/defaultCover/default.jpg'
+        this.postForm.cover = 'https://read.lxyamusement.cn:9000/defaultCover/default.jpg'
         this.postForm.coverPath = '/defaultCover/default.jpg'
       } else {
         this.postForm.cover = cover

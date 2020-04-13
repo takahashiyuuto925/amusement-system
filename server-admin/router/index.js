@@ -3,6 +3,8 @@ const boom = require('boom')
 const userRouter = require('./user')
 const bookRouter = require('./book')
 const bookmallRouter = require('./bookmall')
+const wxbookRouter = require('./wxbook')
+const wxuserRouter = require('./wxuser')
 const jwtAuth = require('./jwt')
 const Result = require('../models/Result')
 
@@ -18,6 +20,8 @@ router.use(jwtAuth)
 router.use('/user', userRouter)
 router.use('/book', bookRouter)
 router.use('/bookmall', bookmallRouter)
+router.use('/wxbook', wxbookRouter)
+router.use('/wxuser', wxuserRouter)
 
 router.get('/transaction/list', function (req, res) {
   res.send({
@@ -35,7 +39,7 @@ router.get('/transaction/list', function (req, res) {
 
 /**
  * 集中处理404请求的中间件
- * 注意：该中间件必须放在正常处理流程之后
+ * 该中间件必须放在正常处理流程之后
  * 否则，会拦截正常请求
  */
 router.use((req, res, next) => {
@@ -44,9 +48,8 @@ router.use((req, res, next) => {
 
 /**
  * 自定义路由异常处理中间件
- * 注意两点：
- * 第一，方法的参数不能减少
- * 第二，方法的必须放在路由最后
+ * 方法的参数不能减少
+ * 方法的必须放在路由最后
  */
 router.use((err, req, res, next) => {
     // console.log(err)

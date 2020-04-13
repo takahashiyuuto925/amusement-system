@@ -68,7 +68,7 @@ function insert(model, tableName) {
                 const keysString = keys.join(',')
                 const valuesString = values.join(',')
                 sql = `${sql}${keysString}) VALUES (${valuesString})`
-                // debug && console.log(sql,'--sql')
+                debug && console.log(sql,'--sql')
                 const conn = connect()
                 try {
                     conn.query(sql, (err, result) => {
@@ -140,11 +140,41 @@ function andLike(where, k, v) {
     }
 }
 
+function querySqlList(sql, onSuccess, onFail) {
+    const conn = connect()
+    debug && console.log(sql)
+    const resultList = []
+    let index = 0
+    function next() {
+      index++
+      if (index < sql.length) {
+        query()
+      } else {
+        conn.end()
+        onSuccess && onSuccess(resultList)
+      }
+    }
+    function query() {
+      conn.query(sql[index], (err, results) => {
+        if (err) {
+          console.log('操作失败，原因:' + JSON.stringify(err))
+          onFail && onFail()
+        } else {
+          // debug && console.log('操作成功', JSON.stringify(results))
+          resultList.push(results)
+          next()
+        }
+      })
+    }
+    query()
+}
+
 module.exports = {
     querySql,
     queryOne,
     insert,
     update,
     andLike,
-    and
+    and,
+    querySqlList
 }
